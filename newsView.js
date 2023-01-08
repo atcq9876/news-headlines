@@ -17,7 +17,6 @@ class NewsView {
     headlines.forEach((headline) => {
       this.#createHeadlineElement(headline);
     })
-    // to do: add link to headlineEl div (or its parts) with URL to the official guardian article
   }
 
   displayHeadlinesFromAPI() {
