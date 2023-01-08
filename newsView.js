@@ -36,6 +36,8 @@ class NewsView {
       console.log(data);
       this.model.setHeadlines(data.response.results);
       this.displayHeadlines();
+    }, () => {
+      this.displayError();
     });
   }
 
@@ -44,12 +46,18 @@ class NewsView {
       console.log(data);
       this.model.setHeadlines(data.response.results);
       this.displayHeadlines();
+    }, () => {
+      this.displayError();
     });
   }
 
   displayError() {
     // add a div to the page with an error message
     // (also console.log an error message)
+    const errorEl = document.createElement("div");
+    errorEl.className = "error"
+    errorEl.textContent = "Oops! There was an error."
+    this.mainContainerEl.append(errorEl);
   }
 }
 
