@@ -11,22 +11,11 @@ class NewsView {
   }
 
   displayHeadlines() {
-    this.clearHeadlines();
+    this.#clearHeadlines();
 
     const headlines = this.model.getHeadlines();
     headlines.forEach((headline) => {
-      const headlineEl = document.createElement("div");
-      headlineEl.className = "headline-div"
-      this.mainContainerEl.append(headlineEl);
-
-      const headlineImageEl = document.createElement("img");
-      headlineImageEl.setAttribute("src", headline.fields.thumbnail);
-      headlineEl.append(headlineImageEl);
-      
-      const headlineTitleEl = document.createElement("p")
-      headlineTitleEl.textContent = headline.webTitle;
-      headlineTitleEl.className = "headline-text"
-      headlineEl.append(headlineTitleEl);
+      this.#createHeadlineElement(headline);
     })
     // to do: add link to headlineEl div (or its parts) with URL to the official guardian article
   }
@@ -37,7 +26,7 @@ class NewsView {
       this.model.setHeadlines(data.response.results);
       this.displayHeadlines();
     }, () => {
-      this.displayError();
+      this.#displayError();
     });
   }
 
@@ -47,22 +36,43 @@ class NewsView {
       this.model.setHeadlines(data.response.results);
       this.displayHeadlines();
     }, () => {
-      this.displayError();
+      this.#displayError();
     });
   }
 
-  clearHeadlines() {
+  // Private functions
+
+  #clearHeadlines() {
     const headlines = document.querySelectorAll(".headline-div")
     headlines.forEach((headline) => {
       headline.remove();
     })
   }
 
-  displayError() {
+  #displayError() {
     const errorEl = document.createElement("div");
     errorEl.className = "error"
     errorEl.textContent = "Oops! There was an error."
     this.mainContainerEl.append(errorEl);
+  }
+
+  #createHeadlineElement(headline) {
+    const headlineEl = document.createElement("div");
+    headlineEl.className = "headline-div"
+    this.mainContainerEl.append(headlineEl);
+
+    const headlineImageEl = document.createElement("img");
+    headlineImageEl.setAttribute("src", headline.fields.thumbnail);
+    headlineEl.append(headlineImageEl);
+    
+    const headlineTitleEl = document.createElement("p")
+    headlineEl.append(headlineTitleEl);
+
+    const headlineTitleLinkEl = document.createElement("a")
+    headlineTitleLinkEl.textContent = headline.webTitle;
+    headlineTitleLinkEl.className = "headline-text"
+    headlineTitleLinkEl.setAttribute("href", headline.webURL);
+    headlineTitleEl.append(headlineTitleLinkEl);
   }
 }
 
