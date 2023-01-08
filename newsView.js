@@ -11,7 +11,8 @@ class NewsView {
   }
 
   displayHeadlines() {
-    // to do: clear old headlines
+    this.clearHeadlines();
+
     const headlines = this.model.getHeadlines();
     headlines.forEach((headline) => {
       const headlineEl = document.createElement("div");
@@ -31,7 +32,6 @@ class NewsView {
   }
 
   displayHeadlinesFromAPI() {
-    // (pass a second callback, displayError(), to be called in .catch part of fetch call)
     this.client.loadHeadlines("", (data) => {
       console.log(data);
       this.model.setHeadlines(data.response.results);
@@ -51,9 +51,14 @@ class NewsView {
     });
   }
 
+  clearHeadlines() {
+    const headlines = document.querySelectorAll(".headline-div")
+    headlines.forEach((headline) => {
+      headline.remove();
+    })
+  }
+
   displayError() {
-    // add a div to the page with an error message
-    // (also console.log an error message)
     const errorEl = document.createElement("div");
     errorEl.className = "error"
     errorEl.textContent = "Oops! There was an error."
