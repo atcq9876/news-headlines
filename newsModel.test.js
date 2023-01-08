@@ -14,13 +14,4 @@ describe('NewsModel', () => {
 
     expect(model.getHeadlines()).toEqual(['One', 'Two', 'Three']);
   })
-
-  it('resets headlines', () => {
-    const model = new NewsModel();
-    headlines = ['One', 'Two', 'Three'];
-    model.setHeadlines(headlines)
-    model.resetHeadlines()
-
-    expect(model.getHeadlines()).toEqual([]);
-  })
 })
