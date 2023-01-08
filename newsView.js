@@ -70,7 +70,7 @@ class NewsView {
     const headlineTitleLinkEl = document.createElement("a")
     headlineTitleLinkEl.textContent = headline.webTitle;
     headlineTitleLinkEl.className = "headline-text"
-    headlineTitleLinkEl.setAttribute("href", headline.webURL);
+    headlineTitleLinkEl.setAttribute("href", headline.webUrl);
     headlineTitleEl.append(headlineTitleLinkEl);
   }
 }
