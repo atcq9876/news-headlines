@@ -12,11 +12,19 @@ class NewsView {
   }
 
   displayHeadlines() {
-
+    // clear old headlines
+    // call getHeadlines on model
+    // loop through headlines and create divs with an image and text
+      // headline (which links to the official guardian article), appending each
+      // div to the page
+    
   }
 
   displayHeadlinesFromAPI() {
-    
+    // call loadAllHeadlines on client, passing it a callback that:
+      // calls setHeadlines on model
+      // calls displayHeadlines on this
+    // (pass a second callback, displayError(), to be called in .catch part of fetch call)
   }
 
   searchHeadlines(searchInput) {
@@ -24,7 +32,8 @@ class NewsView {
   }
 
   displayError() {
-
+    // add a div to the page with an error message
+    // (also console.log an error message)
   }
 }
 
