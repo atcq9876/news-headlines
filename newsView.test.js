@@ -21,13 +21,37 @@ describe('NewsView', () => {
     NewsClient.mockClear();
   });
 
-  it('calls loadAllHeadlines via displayHeadlinesFromAPI', () => {
-    const model = new NewsModel();
-    const client = new NewsClient();
-    const view = new NewsView(model, client);
+  it('calls loadHeadlines (on client) via displayHeadlinesFromAPI function', () => {
+    const mockModel = new NewsModel();
+    const mockClient = new NewsClient();
+    const view = new NewsView(mockModel, mockClient);
     
     view.displayHeadlinesFromAPI();
 
-    expect(client.loadAllHeadlines).toHaveBeenCalledTimes(1);    
+    expect(mockClient.loadHeadlines).toHaveBeenCalledTimes(1);    
+  })
+
+  it('calls loadHeadlines (on client) via searchHeadlines function', () => {
+    const mockModel = new NewsModel();
+    const mockClient = new NewsClient();
+    const view = new NewsView(mockModel, mockClient);
+    
+    view.searchHeadlines("Test");
+
+    expect(mockClient.loadHeadlines).toHaveBeenCalledTimes(1);
+  })
+
+  it('calls loadHeadlines (on client) via searchHeadlines function when search button clicked', () => {
+    const mockModel = new NewsModel();
+    const mockClient = new NewsClient();
+    const view = new NewsView(mockModel, mockClient);
+
+    const inputEl = document.querySelector("#search-input");
+    inputEl.value = "Test";
+
+    const buttonEl = document.querySelector("#search-btn");
+    buttonEl.click();
+
+    expect(mockClient.loadHeadlines).toHaveBeenCalledTimes(1);
   })
 });
