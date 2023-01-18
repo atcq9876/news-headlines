@@ -60,9 +60,13 @@ class NewsView {
     headlineEl.className = "headline-div"
     this.mainContainerEl.append(headlineEl);
 
+    const headlineAnchorEl = document.createElement("a")
+    headlineAnchorEl.setAttribute("href", headline.webUrl);
+    headlineEl.append(headlineAnchorEl);
+
     const headlineImageEl = document.createElement("img");
     headlineImageEl.setAttribute("src", headline.fields.thumbnail);
-    headlineEl.append(headlineImageEl);
+    headlineAnchorEl.append(headlineImageEl);
     
     const headlineTitleEl = document.createElement("p")
     headlineEl.append(headlineTitleEl);
