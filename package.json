@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/atcq9876/news-summary-challenge#readme",
   "dependencies": {
+    "esbuild": "0.17.2",
     "jest-environment-jsdom": "^29.3.1"
   },
   "devDependencies": {
