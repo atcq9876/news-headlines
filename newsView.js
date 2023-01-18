@@ -5,8 +5,16 @@ class NewsView {
     this.mainContainerEl = document.querySelector("#main-container");
 
     this.searchButtonEl = document.querySelector("#search-btn");
+    this.searchInputEl = document.querySelector("#search-input");
+
     this.searchButtonEl.addEventListener('click', () => {
-      this.searchHeadlines(document.querySelector("#search-input").value);
+      this.searchHeadlines(this.searchInputEl.value);
+    });
+    
+    this.searchInputEl.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        this.searchButtonEl.click();
+      }
     });
   }
 
@@ -57,10 +65,11 @@ class NewsView {
 
   #createHeadlineElement(headline) {
     const headlineEl = document.createElement("div");
-    headlineEl.className = "headline-div"
+    headlineEl.className = "headline-div";
     this.mainContainerEl.append(headlineEl);
-
-    const headlineAnchorEl = document.createElement("a")
+    
+    const headlineAnchorEl = document.createElement("a");
+    headlineAnchorEl.className = "headline-anchor";
     headlineAnchorEl.setAttribute("href", headline.webUrl);
     headlineEl.append(headlineAnchorEl);
 
@@ -68,14 +77,10 @@ class NewsView {
     headlineImageEl.setAttribute("src", headline.fields.thumbnail);
     headlineAnchorEl.append(headlineImageEl);
     
-    const headlineTitleEl = document.createElement("p")
-    headlineEl.append(headlineTitleEl);
-
-    const headlineTitleLinkEl = document.createElement("a")
-    headlineTitleLinkEl.textContent = headline.webTitle;
-    headlineTitleLinkEl.className = "headline-text"
-    headlineTitleLinkEl.setAttribute("href", headline.webUrl);
-    headlineTitleEl.append(headlineTitleLinkEl);
+    const headlineTitleEl = document.createElement("div")
+    headlineTitleEl.className = "headline-text"
+    headlineTitleEl.textContent = headline.webTitle;
+    headlineAnchorEl.append(headlineTitleEl);
   }
 }
 
