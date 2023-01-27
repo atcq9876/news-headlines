@@ -12,7 +12,7 @@ This is a frontend JavaScript web-app showing the latest headlines from the Guar
 6. Run ```npm install```
 7. Run ```npm run build```
 8. In another terminal tab/window, open the index.html file in your browser: ```open index.html```
-9. Browse through the latest headlines on the homepage and search for news articles by topic by entering a query in the search bar and clicking the submit button or pressing enter
+9. Browse through the latest headlines on the homepage and search for news articles by topic by entering a query in the search bar and clicking the submit button or pressing enter. Click on any headline card to load the full article on the Guardian website.
 10. Type ```npx jest``` in the terminal to run tests
 
 ## Code Structure
