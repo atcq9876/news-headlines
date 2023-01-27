@@ -1,4 +1,4 @@
-# news-challenge
+# News Headlines
 
 ### About this project
 This is a frontend JavaScript web-app showing the latest headlines from the Guardian (and links to the full articles). The data for this website is fetched from the Guardian API.
