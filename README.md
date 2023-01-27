@@ -8,7 +8,7 @@ This is a frontend JavaScript web-app showing the latest headlines from the Guar
 2. If not already installed, install Node.js (version v19.4.0 at the time of writing): ```nvm install 19```
 3. Clone the repository to your device
 4. Enter the directory: ```cd bank-tech-test```
-5. Activate node: ```nvm use node```
+5. Activate Node: ```nvm use node```
 4. Run ```npm install```
 5. Open the index.html file in your browser: ```open index.html```
 6. Browse through the latest headlines on the homepage and search for news articles by topic by entering a query in the search bar and clicking the submit button or pressing enter
