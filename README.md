@@ -9,10 +9,11 @@ This is a frontend JavaScript web-app showing the latest headlines from the Guar
 3. Clone the repository to your device
 4. Enter the directory: ```cd bank-tech-test```
 5. Activate Node: ```nvm use node```
-4. Run ```npm install```
-5. Open the index.html file in your browser: ```open index.html```
-6. Browse through the latest headlines on the homepage and search for news articles by topic by entering a query in the search bar and clicking the submit button or pressing enter
-7. Type ```npx jest``` in the terminal to run tests
+6. Run ```npm install```
+7. Run ```npm run build```
+8. In another terminal tab/window, open the index.html file in your browser: ```open index.html```
+9. Browse through the latest headlines on the homepage and search for news articles by topic by entering a query in the search bar and clicking the submit button or pressing enter
+10. Type ```npx jest``` in the terminal to run tests
 
 ## Code Structure
 
