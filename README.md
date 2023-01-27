@@ -30,6 +30,6 @@ By separating the application logic into these three distinct components, it mak
 
 ![screenshot of the homepage](./screenshots/homepage.png)
 
-#### Search for 'music'
+#### Search for 'comedy'
 
 ![screenshot of a search](./screenshots/search.png)
