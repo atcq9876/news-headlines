@@ -4,13 +4,13 @@
 
 const fs = require('fs');
 const { isReadable } = require('stream');
-const NewsView = require('./newsView');
-const NewsModel = require('./newsModel');
-const NewsClient = require('./newsClient');
+const NewsView = require('../src/newsView');
+const NewsModel = require('../src/newsModel');
+const NewsClient = require('../src/newsClient');
 
 // create jest automatic mocks of the model and client classes
-jest.mock('./newsModel');
-jest.mock('./newsClient');
+jest.mock('../src/newsModel');
+jest.mock('../src/newsClient');
 
 describe('NewsView', () => {
   

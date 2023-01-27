@@ -1,4 +1,4 @@
-const apiKey = require('./apiKey');
+const apiKey = require('../apiKey');
 
 class NewsClient {
   loadHeadlines(query, callback, errorCallback) {

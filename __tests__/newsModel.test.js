@@ -1,4 +1,4 @@
-const NewsModel = require('./newsModel');
+const NewsModel = require('../src/newsModel');
 
 describe('NewsModel', () => {
   it('returns an empty array when there are no headlines', () => {

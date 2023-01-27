@@ -1,6 +1,6 @@
-const NewsModel = require('./newsModel');
-const NewsView = require('./newsView');
-const NewsClient = require('./newsClient');
+const NewsModel = require('./src/newsModel');
+const NewsView = require('./src/newsView');
+const NewsClient = require('./src/newsClient');
 
 const model = new NewsModel();
 const client = new NewsClient();
